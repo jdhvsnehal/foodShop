@@ -1,0 +1,74 @@
+{
+  "users": [
+    {
+      "username": "adm1",
+      "password": "adm1pass",
+      "role": "admin",
+      "id": 1
+    },
+    {
+      "username": "clt1",
+      "password": "clt1pass",
+      "role": "client",
+      "id": 2
+    }
+  ],
+  "dishes": [
+    {
+      "name": "dish1",
+      "category": "Indian",
+      "description": "dish1 description space",
+      "imgUrl": "",
+      "price": 150,
+      "id": 1
+    },
+    {
+      "name": "dish2",
+      "category": "Continental",
+      "description": "dish2 description space",
+      "imgUrl": "",
+      "price": 150,
+      "id": 2
+    },
+    {
+      "name": "dish3",
+      "category": "Italian",
+      "description": "dish3 description space",
+      "imgUrl": "",
+      "price": 150,
+      "id": 3
+    },
+    {
+      "name": "dish4",
+      "category": "Mexican",
+      "description": "dish4 description space",
+      "imgUrl": "",
+      "price": 150,
+      "id": 4
+    },
+    {
+      "name": "dish 5",
+      "category": "Mexican",
+      "description": "ajdhaiwu",
+      "imgUrl": "akwjroqw8u",
+      "price": 560,
+      "id": 5
+    },
+    {
+      "name": "k3rjoiweur",
+      "category": "Continental",
+      "description": "sflkpowif",
+      "imgUrl": "lsjfoiwjf",
+      "price": 78,
+      "id": 6
+    },
+    {
+      "name": ",wqkjoje",
+      "category": "Chinese",
+      "description": "lawdkqjur",
+      "imgUrl": "s.fkpowefpw",
+      "price": 200,
+      "id": 7
+    }
+  ]
+}

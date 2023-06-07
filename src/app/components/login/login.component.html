@@ -1,0 +1,18 @@
+<div class="m-6">
+    <h2 class="text-2xl mb-4">Login</h2>
+    <div class="flex flex-col">
+        <label for="username">Username</label>
+        <input type="text" id="username" [(ngModel)]="username" placeholder="Enter username">
+    </div>
+    <div class="flex flex-col">
+        <label for="password">Password:</label>
+        <input type="password" id="password" [(ngModel)]="password">
+    </div>
+    <div>
+        <button (click)="login()" class="bg-emerald-400 p-2">Login</button>
+    </div>
+    <div>
+        <span>Not a member?</span>
+        <span class="ml-6 text-blue-600"><a href="/signup">Signup</a></span>
+    </div>
+</div>

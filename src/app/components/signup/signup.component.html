@@ -1,0 +1,21 @@
+<div class="m-6">
+    <h2 class="text-2xl mb-4">SignUp</h2>
+    <div class="flex flex-col">
+        <label for="username">Username</label>
+        <input type="text" id="username" [(ngModel)]="username" placeholder="Enter username">
+    </div>
+    <div class="flex flex-col">
+        <label for="password">Password</label>
+        <input type="password" id="password" [(ngModel)]="password" placeholder="Enter password">
+    </div>
+    <div>
+        <label for="role" class="m-4">Role:</label>
+        <select id="role">
+            <option value="admin">Admin</option>
+            <option value="client">Customer</option>
+        </select>
+    </div>
+    <div>
+        <button (click)="signup()" class="bg-emerald-400 p-2">SignUp</button>
+    </div>
+</div>

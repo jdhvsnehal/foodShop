@@ -1,0 +1,49 @@
+<div *ngIf="role === 'admin'">
+    <div class="flex justify-between m-6">
+        <span>Dishes</span>
+        <button>Add Dish</button>
+    </div>
+    <div>
+        <div>
+            <label for="name">Dish Name</label>
+            <input type="text" id="name" [(ngModel)]="name" placeholder="Enter Dish Name">
+        </div>
+        <div>
+            <label for="category">Choose a Category</label>
+            <select id="category" [(ngModel)]="categ">
+                <option *ngFor="let type of category" [ngValue]="type.cat">{{type.cat}}</option>
+            </select>
+        </div>
+        <div>
+            <label for="description">Description</label>
+            <input type="text" id="description" [(ngModel)]="description" placeholder="Enter Dish Description">
+        </div>
+        <div>
+            <label for="imgUel">Image URL</label>
+            <input type="text" id="imgUrl" [(ngModel)]="imgUrl" placeholder="Enter the Image URL">
+        </div>
+        <div>
+            <label for="price">Price</label>
+            <input type="number" id="price" [(ngModel)]="price" placeholder="Enter the Price">
+        </div>
+        <div>
+            <button (click)="addDish()" class="bg-emerald-400 p-2">Add Dish</button>
+        </div>
+    </div>
+    <div class="m-10 grid grid-cols-3 gap-10">
+        <div class=" bg-amber-100 rounded-lg flex flex-col justify-between " *ngFor="let dish of dishes">
+            <div class="bold text-lg">{{dish['name']}}</div>
+            <div>{{dish['category']}}</div>
+            <div>{{dish['description']}}</div>
+            <div>Rs. {{dish['price']}}</div>
+            <div class="flex justify-around mb-2">
+                <button class="bg-green-300 p-1">Edit</button>
+                <button class="bg-red-300 p-1">Delete</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div *ngIf="role === 'client'">
+
+</div>
