@@ -3,5 +3,6 @@ export interface Dish {
     "category" : string,
     "description" : string,
     "imgUrl" : string,
-    "price" : number
+    "price" : number,
+    "id" : number
 }

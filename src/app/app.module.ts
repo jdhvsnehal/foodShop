@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { DishesComponent } from './components/dishes/dishes.component';
+import { FormModalComponent } from './components/form-modal/form-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    DishesComponent
+    DishesComponent,
+    FormModalComponent
   ],
   imports: [
     BrowserModule,

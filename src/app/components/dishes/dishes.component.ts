@@ -38,4 +38,5 @@ export class DishesComponent {
       window.location.reload();
     })
   }
+  showModal = false;
 }
