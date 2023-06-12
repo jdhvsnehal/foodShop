@@ -1,4 +1,4 @@
-<div *ngIf="show" class="text-xl bg-amber-300 absolute top-0 left-0 h-screen w-full z-3 bg-opacity-70" id="modal">
+<div *ngIf="show" class="text-xl bg-amber-300 absolute top-0 left-0 h-screen w-full z-3 bg-opacity-70">
     <svg (click)="this.onClose.emit()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="cursor-pointer w-10 h-10 absolute top-5 right-5 text-white">
         <path
             d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
@@ -29,8 +29,5 @@
         <div class="mx-48 mb-5 flex flex-col">
             <button (click)="addDish()" class="bg-emerald-400 p-2 mr-72 rounded">Add Dish</button>
         </div>
-        <!-- <div class="mx-48 mb-5 flex flex-col">
-            <button (click)="updateDish()" class="bg-emerald-400 p-2 mr-72 rounded">Update Dish</button>
-        </div> -->
     </div>
 </div>

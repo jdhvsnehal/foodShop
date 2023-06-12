@@ -16,9 +16,9 @@
   "dishes": [
     {
       "name": "dish1",
-      "category": "Indian",
+      "category": "Italian",
       "description": "dish1 description space",
-      "imgUrl": "",
+      "imgUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80",
       "price": 150,
       "id": 1
     },
@@ -26,7 +26,7 @@
       "name": "dish2",
       "category": "Continental",
       "description": "dish2 description space",
-      "imgUrl": "",
+      "imgUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80",
       "price": 150,
       "id": 2
     },
@@ -42,7 +42,7 @@
       "name": "dish4",
       "category": "Mexican",
       "description": "dish4 description space",
-      "imgUrl": "",
+      "imgUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80",
       "price": 150,
       "id": 4
     },
@@ -63,34 +63,17 @@
       "id": 6
     },
     {
-      "name": ",wqkjoje",
-      "category": "Chinese",
-      "description": "lawdkqjur",
-      "imgUrl": "s.fkpowefpw",
-      "price": 200,
-      "id": 7
-    },
-    {
+      "category": "Italian",
+      "price": 502,
       "id": 8
     },
     {
       "name": "amnfkj",
-      "category": "Continental",
+      "category": "Chinese",
       "description": ".awriwqjr",
       "imgUrl": "qwlrkqwke",
       "price": 789,
       "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "name": "Meenal's dish",
-      "category": "Mexican",
-      "description": "lerpw4iowkro",
-      "imgUrl": "lw,ekroiw0ei",
-      "price": 600,
-      "id": 11
     }
   ]
 }

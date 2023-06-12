@@ -6,18 +6,78 @@
     <app-form-modal (close)="this.showModal=false" [show]="this.showModal"></app-form-modal>
     <div class="m-10 grid grid-cols-3 gap-10">
         <div class=" bg-amber-100 rounded-lg flex flex-col justify-between" *ngFor="let dish of dishes">
-            <div class="bold text-lg">{{dish['name']}}</div>
-            <div>{{dish['category']}}</div>
-            <div>{{dish['description']}}</div>
-            <div>Rs. {{dish['price']}}</div>
-            <div class="flex justify-around mb-2">
-                <button class="bg-green-300 p-1">Edit</button>
-                <button class="bg-red-300 p-1">Delete</button>
+            <div class="flex">
+                <img [src]="dish['imgUrl']" class="p-4 w-2/5">
+                <div class="mt-4">
+                    <div class="bold text-lg">{{dish['name']}}</div>
+                    <div>{{dish['category']}}</div>
+                    <div>{{dish['description']}}</div>
+                    <div>Rs. {{dish['price']}}</div>
+                    <div class="flex justify-around mt-2">
+                        <button class="bg-green-300 p-1" (click)="editDish(dish['id'])">Edit</button>
+                        <button class="bg-red-300 p-1" (click)="deleteDish(dish['id'])">Delete</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- <div *ngIf="showUpdate" class="text-xl bg-amber-300 absolute top-0 left-0 h-screen w-full z-3 bg-opacity-70"> -->
+    <!-- <svg (click)="this.showUpdate=false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+        class="cursor-pointer w-10 h-10 absolute top-5 right-5 text-white">
+        <path
+            d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+    </svg> -->
+    <div class="my-16">
+        <div class="mx-48 mb-5 flex flex-col">
+            <label for="name" class="py-2 px-1.5">Dish Name</label>
+            <input type="text" id="name" [(ngModel)]="name" placeholder="Enter Dish Name"
+                class="mr-72 py-2 px-1.5 rounded" value="{{nm}}" required>
+        </div>
+        <div class="mx-48 mb-5 flex flex-col">
+            <label for="category" class="py-2 px-1.5">Choose a Category</label>
+            <select id="category" [(ngModel)]="categ" class="mr-72 py-2 px-1.5 rounded" value="{{cate}}">
+                <option *ngFor="let type of category" [ngValue]="type.cat">{{type.cat}}</option>
+            </select>
+        </div>
+        <div class="mx-48 mb-5 flex flex-col">
+            <label for="description" class="py-2 px-1.5">Description</label>
+            <input type="text" id="description" [(ngModel)]="description" placeholder="Enter Dish Description"
+                class="mr-72 py-2 px-1.5 rounded" value="{{desc}}">
+        </div>
+        <div class="mx-48 mb-5 flex flex-col">
+            <label for="imgUel" class="py-2 px-1.5">Image URL</label>
+            <input type="text" id="imgUrl" [(ngModel)]="imgUrl" placeholder="Enter the Image URL"
+                class="mr-72 py-2 px-1.5 rounded" value="{{imu}}">
+        </div>
+        <div class="mx-48 mb-5 flex flex-col">
+            <label for="price" class="py-2 px-1.5">Price</label>
+            <input type="number" id="price" [(ngModel)]="price" placeholder="Enter the Price"
+                class="mr-72 py-2 px-1.5 rounded" value="{{pr}}">
+        </div>
+        <div class="mx-48 mb-5 flex flex-col">
+            <button (click)="updateDish()" class="bg-emerald-400 p-2 mr-72 rounded">Update Dish</button>
+        </div>
+    </div>
+    <!-- </div> -->
+
+</div>
+<div *ngIf="role === 'client'">
+    <div class="flex justify-between m-6">
+        <span>Dishes</span>
+        <button class="px-1.5 py-2">Cart</button>
+    </div>
+    <div class="m-10 grid grid-cols-3 gap-10">
+        <div class=" bg-amber-100 rounded-lg flex flex-col justify-between" *ngFor="let dish of dishes">
+            <div class="flex">
+                <img [src]="dish['imgUrl']" class="p-4 w-2/5 ">
+                <div>
+                    <div class="bold text-lg">{{dish['name']}}</div>
+                    <div>{{dish['category']}}</div>
+                    <div>{{dish['description']}}</div>
+                    <div>Rs. {{dish['price']}}</div>
+                </div>
             </div>
         </div>
     </div>
-    
-</div>
-<div *ngIf="role === 'client'">
-
 </div>

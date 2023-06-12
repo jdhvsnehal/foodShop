@@ -18,5 +18,14 @@ export class DishService {
   allDishes (): Observable<any>{
     return this.http.get<any>(`${this.apiUrl}/dishes`);
   }
+
+  updateDish (name: string, category: string, description: string, imgUrl: string, price: number, id: number): Observable<any> {
+    const dish = {name, category, description, imgUrl, price};
+    return this.http.put<any>(`${this.apiUrl}/dishes/${id}`, dish);
+  }
+
+  deleteDish(id:number): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/dishes/${id}`);
+  }
 }
 

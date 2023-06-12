@@ -32,11 +32,41 @@ export class DishesComponent {
   description: string;
   imgUrl: string;
   price: number;
-  addDish () {
-    this.dishService.addDish(this.name, this.categ, this.description, this.imgUrl, this.price).subscribe(dish => {
+  showModal = false;
+  identity : number;
+  currDish : any[];
+  nm: string;
+  desc: string;
+  pr: number;
+  cate : string;
+  imu : string;
+  editDish (id: number) {
+    this.identity = id;
+    this.currDish = [this.dishes.find((d) => {return d['id'] === this.identity})];
+    this.nm = this.currDish[0]['name'];
+    this.desc = this.currDish[0]['description'];
+    this.cate = this.currDish[0]['category'];
+    this.imu = this.currDish[0]['imgUrl'];
+    this.pr = this.currDish[0]['price'];
+    this.showUpdate = true;
+    console.log(this.nm, this.cate);
+  }
+  updateDish () {
+    if(this.name==null) this.name = this.nm;
+    if(this.categ==null) this.categ = this.cate;
+    if(this.description==null) this.description = this.desc;
+    if(this.imgUrl==null) this.imgUrl = this.imu;
+    if(this.price==null) this.price = this.pr;
+    this.dishService.updateDish(this.name, this.categ, this.description, this.imgUrl, this.price, this.identity).subscribe(dish => {
       this.router.navigate(['/dishes']);
       window.location.reload();
     })
+    this.showUpdate = false; 
   }
-  showModal = false;
+  showUpdate = false;
+  deleteDish (id: number) {
+    this.dishService.deleteDish(id).subscribe(()=>{
+      window.location.reload();
+    });
+  }
 }
