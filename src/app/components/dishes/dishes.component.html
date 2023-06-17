@@ -22,8 +22,8 @@
 
         </div>
     </div>
-    <!-- <div *ngIf="showUpdate" class="text-xl bg-amber-300 absolute top-0 left-0 h-screen w-full z-3 bg-opacity-70"> -->
-    <!-- <svg (click)="this.showUpdate=false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+    <!-- <div *ngIf="showUpdate" class="text-xl bg-amber-300 absolute top-0 left-0 h-screen w-full z-3 bg-opacity-70">
+    <svg (click)="this.showUpdate=false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
         class="cursor-pointer w-10 h-10 absolute top-5 right-5 text-white">
         <path
             d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
@@ -58,17 +58,17 @@
         <div class="mx-48 mb-5 flex flex-col">
             <button (click)="updateDish()" class="bg-emerald-400 p-2 mr-72 rounded">Update Dish</button>
         </div>
-    </div>
     <!-- </div> -->
+    </div>
 
 </div>
 <div *ngIf="role === 'client'">
     <div class="flex justify-between m-6">
         <span>Dishes</span>
-        <button class="px-1.5 py-2">Cart</button>
+        <button class="px-1.5 py-2"><a href="/cart">Cart</a></button>
     </div>
     <div class="m-10 grid grid-cols-3 gap-10">
-        <div class=" bg-amber-100 rounded-lg flex flex-col justify-between" *ngFor="let dish of dishes">
+        <div *ngFor="let dish of dishes" class=" bg-amber-100 rounded-lg flex flex-col justify-between">
             <div class="flex">
                 <img [src]="dish['imgUrl']" class="p-4 w-2/5 ">
                 <div>
@@ -76,6 +76,14 @@
                     <div>{{dish['category']}}</div>
                     <div>{{dish['description']}}</div>
                     <div>Rs. {{dish['price']}}</div>
+                    <div *ngIf="checkId(dish['id'])">
+                        <button (click)="increment(dish['id'])" class="p-2 rounded border">+</button>
+                        <span>{{userData.cart[dish['id']]}}</span>
+                        <button (click)="decrement(dish['id'])" class="p-2 rounded border">-</button>
+                    </div>
+                    <div *ngIf="!checkId(dish['id'])">
+                        <button (click)="addToCart(dish['id'])">Add to cart</button>
+                    </div>
                 </div>
             </div>
         </div>

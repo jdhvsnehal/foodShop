@@ -15,7 +15,12 @@ export class AuthenticationService {
   }
 
   signup (username: string, password: string, role: string) : Observable<any> {
-    const user = {username, password, role};
+    let user = {};
+    if(role==='client') {
+      let cart : any = {};
+      user = {username, password, role, cart};
+    }
+    else user = {username, password, role};
     return this.http.post<any>(`${this.apiUrl}/users`, user);
   }
 }

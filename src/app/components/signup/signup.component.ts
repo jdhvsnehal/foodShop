@@ -11,6 +11,10 @@ export class SignupComponent {
   username: string;
   password: string;
   role: string;
+  roles = [
+    { roleType : "admin" },
+    { roleType : "client"}
+  ]
   
   constructor (private router: Router, private authService: AuthenticationService) { }
 

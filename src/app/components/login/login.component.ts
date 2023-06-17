@@ -17,6 +17,10 @@ export class LoginComponent {
     this.authService.login(this.username, this.password).subscribe(user=>{
       if(user[0]) {
         localStorage.setItem('userRole', user[0].role);
+        localStorage.setItem('userId', user[0].id);
+        if(user[0].role==="client") {
+          localStorage.setItem('userCart', user[0].cart);
+        }
         this.router.navigate(['/dishes']);
       } else {
         alert('Invalid credentials');

@@ -27,5 +27,9 @@ export class DishService {
   deleteDish(id:number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/dishes/${id}`);
   }
+
+  getDish (id: string) {
+    return this.http.get(`${this.apiUrl}/dishes/${id}`);
+  } 
 }
 

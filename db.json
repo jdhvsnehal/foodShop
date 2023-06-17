@@ -1,16 +1,32 @@
 {
   "users": [
     {
-      "username": "adm1",
-      "password": "adm1pass",
-      "role": "admin",
+      "username": "testclt",
+      "password": "testclt",
+      "role": "client",
+      "cart": {
+        "1": 7,
+        "2": 1,
+        "5": 2
+      },
       "id": 1
     },
     {
-      "username": "clt1",
-      "password": "clt1pass",
+      "username": "testclt2",
+      "password": "testclt2",
       "role": "client",
+      "cart": {
+        "1": 2,
+        "3": 4,
+        "6": 7
+      },
       "id": 2
+    },
+    {
+      "username": "testadm",
+      "password": "testadm",
+      "role": "admin",
+      "id": 3
     }
   ],
   "dishes": [
@@ -50,7 +66,7 @@
       "name": "dish 5",
       "category": "Mexican",
       "description": "ajdhaiwu",
-      "imgUrl": "akwjroqw8u",
+      "imgUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80",
       "price": 560,
       "id": 5
     },
@@ -58,7 +74,7 @@
       "name": "k3rjoiweur",
       "category": "Continental",
       "description": "sflkpowif",
-      "imgUrl": "lsjfoiwjf",
+      "imgUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80",
       "price": 78,
       "id": 6
     },
@@ -66,14 +82,6 @@
       "category": "Italian",
       "price": 502,
       "id": 8
-    },
-    {
-      "name": "amnfkj",
-      "category": "Chinese",
-      "description": ".awriwqjr",
-      "imgUrl": "qwlrkqwke",
-      "price": 789,
-      "id": 9
     }
   ]
 }
