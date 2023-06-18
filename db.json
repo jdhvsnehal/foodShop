@@ -6,7 +6,6 @@
       "role": "client",
       "cart": {
         "1": 7,
-        "2": 1,
         "5": 2
       },
       "id": 1
@@ -27,6 +26,26 @@
       "password": "testadm",
       "role": "admin",
       "id": 3
+    },
+    {
+      "username": "hlj",
+      "password": "hj@678",
+      "role": "admin",
+      "id": 4
+    },
+    {
+      "username": "tryclt",
+      "password": "tryclt",
+      "role": "client",
+      "cart": {
+        "1": 2,
+        "2": 4,
+        "3": 1,
+        "4": 3,
+        "5": 1,
+        "6": 1
+      },
+      "id": 5
     }
   ],
   "dishes": [
@@ -65,7 +84,7 @@
     {
       "name": "dish 5",
       "category": "Mexican",
-      "description": "ajdhaiwu",
+      "description": "dish5 description space",
       "imgUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80",
       "price": 560,
       "id": 5
@@ -73,15 +92,26 @@
     {
       "name": "k3rjoiweur",
       "category": "Continental",
-      "description": "sflkpowif",
+      "description": "dish6 description space",
       "imgUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80",
       "price": 78,
       "id": 6
     },
     {
+      "name": "Pizza",
       "category": "Italian",
+      "description": "Pizza with steaming cheese",
+      "imgUrl": "https://static.toiimg.com/thumb/56933159.cms?imgsize=686279&width=800&height=800",
       "price": 502,
       "id": 8
+    },
+    {
+      "name": "Paneer",
+      "category": "Indian",
+      "description": "Famous cottage cheese dish ",
+      "imgUrl": "https://static.toiimg.com/photo/53519548.cms",
+      "price": 350,
+      "id": 9
     }
   ]
 }

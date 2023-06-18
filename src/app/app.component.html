@@ -6,7 +6,8 @@
 		<ul class="flex gap-6">
 			<li><a href="/">Home</a></li>
 			<li><a href="/dishes">Dishes</a></li>
-			<li><a href="/login">Login</a></li>
+			<div *ngIf="role===''"><li><a href="/login">Login</a></li></div>
+			<div *ngIf="role!==''"><li><a (click)="logout()" href="/login">Logout</a></li></div>
 		</ul>
 	</div>
 </nav>

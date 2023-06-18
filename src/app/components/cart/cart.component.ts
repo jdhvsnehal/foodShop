@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { DishService } from 'src/app/services/dish.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -9,25 +10,26 @@ import { DishService } from 'src/app/services/dish.service';
 })
 export class CartComponent {
 
-  constructor(private cartService: CartService, private dishService: DishService) {}
-
+  constructor(private cartService: CartService, private dishService: DishService, private router: Router) {}
+  role: string = localStorage.getItem('userRole') || '';
   userId: string = localStorage.getItem("userId") || "";
   userData : any = {};
+  dishes : any[];
+  allDishes : any[] = [];
 
   ngOnInit() {
+    if (this.role === '') {
+      this.router.navigate(["/login"]);
+    }
     this.cartService.getCart(this.userId).subscribe(data => {
       this.userData = data;
+      for(let i of Object.keys(this.userData["cart"])){
+        this.dishService.getDish(i).subscribe(data => {
+          this.allDishes.push(data);
+        })
+      }
     })
-  }
-  dish : any = {};
-  dishes : any[];
-  
-  
-  getDish (id:string) {
-    this.dishService.getDish(id).subscribe(data => {
-      this.dish = data;
-      return this.dish; 
-    })
+    
   }
   checkId(id: string) {
     if(this.userData.cart.hasOwnProperty(id)) return true;

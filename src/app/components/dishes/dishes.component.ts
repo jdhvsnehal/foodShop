@@ -9,7 +9,9 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./dishes.component.css']
 })
 export class DishesComponent {
-  constructor(private router: Router, private dishService: DishService, private cartService: CartService) { }
+  constructor(private router: Router, private dishService: DishService, private cartService: CartService) { 
+    // window.location.reload();
+  }
   role: string = localStorage.getItem('userRole') || '';
   dishes: [];
   categ: string;
@@ -20,7 +22,6 @@ export class DishesComponent {
     { cat: "Mexican" },
     { cat: "Chinese" }
   ]
-
   ngOnInit() {
     if (this.role === '') {
       this.router.navigate(["/login"]);
@@ -78,20 +79,20 @@ export class DishesComponent {
   userId: string = localStorage.getItem("userId") || "";
   userData : any = {};
   checkId(id: string) {
-    if(this.userData.cart.hasOwnProperty(id)) return true;
+    if(id in Object.keys(this.userData["cart"])) return true;
     else false;
   } 
   increment(id: string) {
-    this.userData.cart[id] += 1;
+    this.userData["cart"][id] += 1;
     this.cartService.addToCart(this.userId, this.userData).subscribe();
   }
   decrement(id: string) {
-    this.userData.cart[id] -= 1;
-    if(this.userData.cart[id]===0){delete this.userData.cart[id];}
+    this.userData["cart"][id] -= 1;
+    if(this.userData["cart"][id]===null){delete this.userData["cart"][id];}
     this.cartService.addToCart(this.userId, this.userData).subscribe();
   }
   addToCart(id: string) {
-    this.userData.cart[id] = 1;
+    this.userData["cart"][id] = 1;
     this.cartService.addToCart(this.userId, this.userData).subscribe();
   }
 }

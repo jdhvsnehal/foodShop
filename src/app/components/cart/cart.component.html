@@ -1,6 +1,19 @@
 <div class="m-10 grid grid-cols-3 gap-10">
-    <div  class=" bg-amber-100 rounded-lg flex flex-col justify-between">
+    <div *ngFor="let dish of allDishes" class=" bg-amber-100 rounded-lg flex flex-col justify-between">
         <div class="flex">
-            <div class="bold text-lg"></div>
+            <img [src]="dish['imgUrl']" class="p-4 w-2/5 ">
+            <div>
+                <div class="bold text-lg">{{dish['name']}}</div>
+                <div>{{dish['category']}}</div>
+                <div>{{dish['description']}}</div>
+                <div>Rs. {{dish['price']}}</div>
+                <div *ngIf="checkId(dish['id'])">
+                    <button (click)="increment(dish['id'])" class="p-2 rounded border">+</button>
+                    <span>{{userData.cart[dish['id']]}}</span>
+                    <button (click)="decrement(dish['id'])" class="p-2 rounded border">-</button>
+                </div>
+                
+            </div>
         </div>
     </div>
+</div>

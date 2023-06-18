@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'foodShop';
+  role: string = localStorage.getItem('userRole') || '';
+  logout () {
+    localStorage.clear();
+  }
 }
