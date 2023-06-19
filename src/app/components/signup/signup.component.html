@@ -1,20 +1,27 @@
-<div class="m-6">
-    <h2 class="text-2xl mb-4">SignUp</h2>
-    <div class="flex flex-col">
-        <label for="username">Username</label>
-        <input type="text" id="username" [(ngModel)]="username" placeholder="Enter username">
-    </div>
-    <div class="flex flex-col">
-        <label for="password">Password</label>
-        <input type="password" id="password" [(ngModel)]="password" placeholder="Enter password">
-    </div>
-    <div>
-        <label for="role" class="m-4">Role:</label>
-        <select [(ngModel)]="role">
-            <option *ngFor="let x of roles" [ngValue]="x.roleType">{{x.roleType}}</option>
-        </select>
-    </div>
-    <div>
-        <button (click)="signup()" class="bg-emerald-400 p-2">SignUp</button>
+<div class="flex mt-10 px-48 justify-evenly">
+    <img src="https://images.unsplash.com/photo-1622028715355-ec58f12a7f9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=354&q=80" class="border-orange-800 border-2 rounded-xl">
+    <div class="m-6 text-lg">
+        <h2 class="text-4xl mb-6">Join us</h2>
+        <div class="flex flex-col">
+            <label class="pl-2 text-base" for="username">Username</label>
+            <input type="text" id="username" [(ngModel)]="username" placeholder="Enter username" class="border-orange-800 border rounded-lg pl-2 mt-1">
+        </div>
+        <div class="flex flex-col mt-4">
+            <label class="text-base pl-2" for="password">Password</label>
+            <input type="password" id="password" [(ngModel)]="password" placeholder="Enter password" class="border-orange-800 border rounded-lg pl-2 mt-1">
+        </div>
+        <div class="flex flex-col my-4">
+            <label for="role" class="text-base pl-2">Role</label>
+            <select [(ngModel)]="role" class="border-orange-800 border rounded-lg pl-2 mt-1">
+                <option *ngFor="let x of roles" [ngValue]="x.roleType" class="border-orange-800 border rounded-lg pl-2 mt-1">{{x.roleType}}</option>
+            </select>
+        </div>
+        <div>
+            <button (click)="signup()" class="bg-yellow-300 px-4 pt-1 pb-1.5 rounded-lg mb-4 mt-2">SignUp</button>
+        </div>
+        <div>
+            <span>Already a member?</span>
+            <span class="ml-4 text-yellow-700"><a href="/login">Login</a></span>
+        </div>
     </div>
 </div>

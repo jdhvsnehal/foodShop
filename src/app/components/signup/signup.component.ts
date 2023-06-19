@@ -15,8 +15,12 @@ export class SignupComponent {
     { roleType : "admin" },
     { roleType : "client"}
   ]
-  
-  constructor (private router: Router, private authService: AuthenticationService) { }
+  rOle: string = localStorage.getItem('userRole') || '';
+  constructor (private router: Router, private authService: AuthenticationService) {
+    if (this.rOle !== '') {
+      this.router.navigate(['/home']);
+    }
+   }
 
   signup () {
     this.authService.signup(this.username, this.password, this.role).subscribe(user=>{

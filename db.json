@@ -5,7 +5,8 @@
       "password": "testclt",
       "role": "client",
       "cart": {
-        "1": 7,
+        "2": 2,
+        "3": 2,
         "5": 2
       },
       "id": 1
@@ -40,20 +41,28 @@
       "cart": {
         "1": 2,
         "2": 4,
-        "3": 1,
-        "4": 3,
-        "5": 1,
-        "6": 1
+        "3": 2,
+        "4": 6,
+        "5": 2
       },
       "id": 5
+    },
+    {
+      "username": "newclt",
+      "password": "newclt",
+      "role": "client",
+      "cart": {
+        "1": 1
+      },
+      "id": 6
     }
   ],
   "dishes": [
     {
-      "name": "dish1",
+      "name": "Spring Rolls",
       "category": "Italian",
-      "description": "dish1 description space",
-      "imgUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80",
+      "description": "Fried rice rolls filled as per liking",
+      "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/blooming-quesadilla-ring-1674080631.jpeg",
       "price": 150,
       "id": 1
     },
@@ -61,7 +70,7 @@
       "name": "dish2",
       "category": "Continental",
       "description": "dish2 description space",
-      "imgUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80",
+      "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/blooming-quesadilla-ring-1674080631.jpeg",
       "price": 150,
       "id": 2
     },
@@ -69,7 +78,7 @@
       "name": "dish3",
       "category": "Italian",
       "description": "dish3 description space",
-      "imgUrl": "",
+      "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/blooming-quesadilla-ring-1674080631.jpeg",
       "price": 150,
       "id": 3
     },
@@ -77,15 +86,15 @@
       "name": "dish4",
       "category": "Mexican",
       "description": "dish4 description space",
-      "imgUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80",
+      "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/blooming-quesadilla-ring-1674080631.jpeg",
       "price": 150,
       "id": 4
     },
     {
-      "name": "dish 5",
+      "name": "Spicy rolls",
       "category": "Mexican",
       "description": "dish5 description space",
-      "imgUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80",
+      "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/blooming-quesadilla-ring-1674080631.jpeg",
       "price": 560,
       "id": 5
     },
@@ -93,8 +102,8 @@
       "name": "k3rjoiweur",
       "category": "Continental",
       "description": "dish6 description space",
-      "imgUrl": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80",
-      "price": 78,
+      "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/blooming-quesadilla-ring-1674080631.jpeg",
+      "price": 300,
       "id": 6
     },
     {
@@ -112,6 +121,14 @@
       "imgUrl": "https://static.toiimg.com/photo/53519548.cms",
       "price": 350,
       "id": 9
+    },
+    {
+      "name": "Pasta",
+      "category": "Italian",
+      "description": "Pasta made with various items",
+      "imgUrl": "https://www.funfoodfrolic.com/wp-content/uploads/2020/09/Tomato-Pasta-Thumbnail.jpg",
+      "price": 450,
+      "id": 10
     }
   ]
 }

@@ -1,88 +1,99 @@
-<div *ngIf="role === 'admin'">
+<div *ngIf="role === 'admin'" class="text-lg px-48">
     <div class="flex justify-between m-6">
-        <span>Dishes</span>
-        <button (click)="this.showModal=true" class="px-1.5 py-2 bg-yellow-300 rounded">Add Dish</button>
+        <span class="text-xl mt-3 font-bold text-orange-800">Menu</span>
+        <button (click)="this.showModal=true" class="bg-yellow-300 px-4 pt-1 pb-1.5 rounded-lg mb-4 mt-2">
+            Add Dish
+        </button>
     </div>
     <app-form-modal (close)="this.showModal=false" [show]="this.showModal"></app-form-modal>
-    <div class="m-10 grid grid-cols-3 gap-10">
-        <div class=" bg-amber-100 rounded-lg flex flex-col justify-between" *ngFor="let dish of dishes">
+    <div class="mt-10 grid grid-cols-2 gap-10">
+        <div class="rounded-lg flex flex-col justify-between shadow hover:shadow-2xl mx-5" *ngFor="let dish of dishes">
             <div class="flex">
-                <img [src]="dish['imgUrl']" class="p-4 w-2/5">
+                <img [src]="dish['imgUrl']" class="mx-4 my-auto w-32 shadow shadow-orange-800 border-2 rounded-xl">
                 <div class="mt-4">
-                    <div class="bold text-lg">{{dish['name']}}</div>
-                    <div>{{dish['category']}}</div>
-                    <div>{{dish['description']}}</div>
-                    <div>Rs. {{dish['price']}}</div>
-                    <div class="flex justify-around mt-2">
-                        <button class="bg-green-300 p-1" (click)="editDish(dish['id'])">Edit</button>
-                        <button class="bg-red-300 p-1" (click)="deleteDish(dish['id'])">Delete</button>
+                    <div class="font-semibold text-2xl pl-7 mt-1 mb-1.5">{{dish['name']}}</div>
+                    <div class="pl-7 text-slate-500">{{dish['description']}}</div>
+                    <div class="italic mb-1 pl-7 text-base">{{dish['category']}}</div>
+                    <div class="pl-7 mb-1.5">₹{{dish['price']}}</div>
+                    <div class="flex justify-around mt-2 mb-3 pl-2">
+                        <button class="bg-yellow-300 px-6 pt-1 pb-1.5 rounded-lg"
+                            (click)="editDish(dish['id'])">Edit</button>
+                        <button class="text-white bg-orange-800 px-3 pb-1.5 pt-1 rounded-lg text-xl"
+                            (click)="deleteDish(dish['id'])">Delete</button>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-    <!-- <div *ngIf="showUpdate" class="text-xl bg-amber-300 absolute top-0 left-0 h-screen w-full z-3 bg-opacity-70">
-    <svg (click)="this.showUpdate=false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-        class="cursor-pointer w-10 h-10 absolute top-5 right-5 text-white">
-        <path
-            d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-    </svg> -->
-    <div class="my-16">
-        <div class="mx-48 mb-5 flex flex-col">
-            <label for="name" class="py-2 px-1.5">Dish Name</label>
-            <input type="text" id="name" [(ngModel)]="name" placeholder="Enter Dish Name"
-                class="mr-72 py-2 px-1.5 rounded" value="{{nm}}" required>
+    <div *ngIf="showUpdate" class="text-lg bg-yellow-200 fixed top-12 left-1/4 w-1/2 rounded-xl">
+        <svg (click)="this.showUpdate=false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+            class="cursor-pointer w-10 h-10 absolute top-5 right-5 text-white">
+            <path
+                d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+        </svg>
+        <div class="my-12 mx-14">
+            <div class="text-xl mx-24 mb-3 text-center font-bold text-orange-800">
+                Update Dish
+            </div>
+            <div class="mx-24 mb-3 flex flex-col">
+                <label for="name" class="py-1 px-1.5 text-base text-orange-800">Dish Name</label>
+                <input type="text" id="name" [(ngModel)]="name" placeholder="Enter Dish Name"
+                    class="py-1 px-1.5 border-orange-800 border rounded-lg" value="{{nm}}" required>
+            </div>
+            <div class="mx-24 mb-3 flex flex-col">
+                <label for="category" class="py-1 px-1.5 text-base text-orange-800">Choose a Category</label>
+                <select id="category" [(ngModel)]="categ" class="py-1 px-1.5 border-orange-800 border rounded-lg"
+                    value="{{cate}}">
+                    <option *ngFor="let type of category" [ngValue]="type.cat">{{type.cat}}</option>
+                </select>
+            </div>
+            <div class="mx-24 mb-3 flex flex-col">
+                <label for="description" class="py-1 px-1.5 text-base text-orange-800">Description</label>
+                <input type="text" id="description" [(ngModel)]="description" placeholder="Enter Dish Description"
+                    class="py-1 px-1.5 border-orange-800 border rounded-lg" value="{{desc}}">
+            </div>
+            <div class="mx-24 mb-3 flex flex-col">
+                <label for="imgUel" class="py-1 px-1.5 text-base text-orange-800">Image URL</label>
+                <input type="text" id="imgUrl" [(ngModel)]="imgUrl" placeholder="Enter the Image URL"
+                    class="py-1 px-1.5 border-orange-800 border rounded-lg" value="{{imu}}">
+            </div>
+            <div class="mx-24 mb-3 flex flex-col">
+                <label for="price" class="py-1 px-1.5 text-base text-orange-800">Price</label>
+                <input type="number" id="price" [(ngModel)]="price" placeholder="Enter the Price"
+                    class="py-1 px-1.5 border-orange-800 border rounded-lg" value="{{pr}}">
+            </div>
+            <div class="mx-24 flex flex-col">
+                <button (click)="updateDish()"
+                    class="text-white bg-orange-800 px-3 pb-2 pt-1 rounded-lg mb-12 mt-4">Update</button>
+            </div>
         </div>
-        <div class="mx-48 mb-5 flex flex-col">
-            <label for="category" class="py-2 px-1.5">Choose a Category</label>
-            <select id="category" [(ngModel)]="categ" class="mr-72 py-2 px-1.5 rounded" value="{{cate}}">
-                <option *ngFor="let type of category" [ngValue]="type.cat">{{type.cat}}</option>
-            </select>
-        </div>
-        <div class="mx-48 mb-5 flex flex-col">
-            <label for="description" class="py-2 px-1.5">Description</label>
-            <input type="text" id="description" [(ngModel)]="description" placeholder="Enter Dish Description"
-                class="mr-72 py-2 px-1.5 rounded" value="{{desc}}">
-        </div>
-        <div class="mx-48 mb-5 flex flex-col">
-            <label for="imgUel" class="py-2 px-1.5">Image URL</label>
-            <input type="text" id="imgUrl" [(ngModel)]="imgUrl" placeholder="Enter the Image URL"
-                class="mr-72 py-2 px-1.5 rounded" value="{{imu}}">
-        </div>
-        <div class="mx-48 mb-5 flex flex-col">
-            <label for="price" class="py-2 px-1.5">Price</label>
-            <input type="number" id="price" [(ngModel)]="price" placeholder="Enter the Price"
-                class="mr-72 py-2 px-1.5 rounded" value="{{pr}}">
-        </div>
-        <div class="mx-48 mb-5 flex flex-col">
-            <button (click)="updateDish()" class="bg-emerald-400 p-2 mr-72 rounded">Update Dish</button>
-        </div>
-    <!-- </div> -->
     </div>
 
 </div>
-<div *ngIf="role === 'client'">
+<div *ngIf="role === 'client'" class="text-lg px-48">
     <div class="flex justify-between m-6">
-        <span>Dishes</span>
-        <button class="px-1.5 py-2"><a routerLink="/cart">Cart</a></button>
+        <span class="text-xl mt-3 font-bold text-orange-800">Menu</span>
+        <button class="bg-yellow-300 px-4 pt-1 pb-1.5 rounded-lg mb-4 mt-2"><a routerLink="/cart">Cart</a></button>
     </div>
-    <div class="m-10 grid grid-cols-3 gap-10">
-        <div *ngFor="let dish of dishes" class=" bg-amber-100 rounded-lg flex flex-col justify-between">
+    <div class="mt-10 grid grid-cols-2 gap-10">
+        <div *ngFor="let dish of dishes" class="rounded-lg flex flex-col justify-between shadow hover:shadow-2xl mx-5">
             <div class="flex">
-                <img [src]="dish['imgUrl']" class="p-4 w-2/5 ">
-                <div>
-                    <div class="bold text-lg">{{dish['name']}}</div>
-                    <div>{{dish['category']}}</div>
-                    <div>{{dish['description']}}</div>
-                    <div>Rs. {{dish['price']}}</div>
-                    <div *ngIf="checkId(dish['id'])">
-                        <button (click)="increment(dish['id'])" class="p-2 rounded border">+</button>
-                        <span>{{userData.cart[dish['id']]}}</span>
-                        <button (click)="decrement(dish['id'])" class="p-2 rounded border">-</button>
+                <img [src]="dish['imgUrl']" class="mx-4 my-auto w-32 shadow shadow-orange-800 border-2 rounded-xl">
+                <div class="mt-4">
+                    <div class="font-semibold text-2xl pl-7 mt-1 mb-1.5">{{dish['name']}}</div>
+                    <div class="pl-7 text-slate-500">{{dish['description']}}</div>
+                    <div class="italic mb-1 pl-7 text-base">{{dish['category']}}</div>
+                    <div class="pl-7 mb-1.5">Rs. {{dish['price']}}</div>
+                    <div *ngIf="checkId(dish['id'])" class="mt-2 mb-3 pl-7 flex">
+                        <div class="rounded-lg border-2 border-orange-800 grid grid-cols-3 gap-3 px-3 py-2">
+                            <button (click)="increment(dish['id'])">+</button>
+                            <span>{{userData.cart[dish['id']]}}</span>
+                            <button (click)="decrement(dish['id'])">-</button>
+                        </div>
+                        
                     </div>
-                    <div *ngIf="!checkId(dish['id'])">
-                        <button (click)="addToCart(dish['id'])">Add to cart</button>
+                    <div *ngIf="!checkId(dish['id'])" class="mt-2 mb-3 pl-7">
+                        <button (click)="addToCart(dish['id'])" class="text-white bg-orange-800 px-3 pb-1.5 pt-1 rounded-lg text-xl">Add to cart</button>
                     </div>
                 </div>
             </div>

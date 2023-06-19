@@ -9,9 +9,7 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./dishes.component.css']
 })
 export class DishesComponent {
-  constructor(private router: Router, private dishService: DishService, private cartService: CartService) { 
-    // window.location.reload();
-  }
+  constructor(private router: Router, private dishService: DishService, private cartService: CartService) {}
   role: string = localStorage.getItem('userRole') || '';
   dishes: [];
   categ: string;
@@ -24,7 +22,7 @@ export class DishesComponent {
   ]
   ngOnInit() {
     if (this.role === '') {
-      this.router.navigate(["/login"]);
+      this.router.navigate(['/login']);
     }
     this.dishService.allDishes().subscribe(data => {
       this.dishes = data;
@@ -88,7 +86,7 @@ export class DishesComponent {
   }
   decrement(id: string) {
     this.userData["cart"][id] -= 1;
-    if(this.userData["cart"][id]===null){delete this.userData["cart"][id];}
+    if(this.userData["cart"][id]===null || this.userData["cart"][id]<1){delete this.userData["cart"][id];}
     this.cartService.addToCart(this.userId, this.userData).subscribe();
   }
   addToCart(id: string) {
