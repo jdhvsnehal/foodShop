@@ -38,29 +38,28 @@
             <div class="mx-24 mb-3 flex flex-col">
                 <label for="name" class="py-1 px-1.5 text-base text-orange-800">Dish Name</label>
                 <input type="text" id="name" [(ngModel)]="name" placeholder="Enter Dish Name"
-                    class="py-1 px-1.5 border-orange-800 border rounded-lg" value="{{nm}}" required>
+                    class="py-1 px-1.5 border-orange-800 border rounded-lg" required>
             </div>
             <div class="mx-24 mb-3 flex flex-col">
                 <label for="category" class="py-1 px-1.5 text-base text-orange-800">Choose a Category</label>
-                <select id="category" [(ngModel)]="categ" class="py-1 px-1.5 border-orange-800 border rounded-lg"
-                    value="{{cate}}">
+                <select id="category" [(ngModel)]="categ" class="py-1 px-1.5 border-orange-800 border rounded-lg">
                     <option *ngFor="let type of category" [ngValue]="type.cat">{{type.cat}}</option>
                 </select>
             </div>
             <div class="mx-24 mb-3 flex flex-col">
                 <label for="description" class="py-1 px-1.5 text-base text-orange-800">Description</label>
                 <input type="text" id="description" [(ngModel)]="description" placeholder="Enter Dish Description"
-                    class="py-1 px-1.5 border-orange-800 border rounded-lg" value="{{desc}}">
+                    class="py-1 px-1.5 border-orange-800 border rounded-lg">
             </div>
             <div class="mx-24 mb-3 flex flex-col">
                 <label for="imgUel" class="py-1 px-1.5 text-base text-orange-800">Image URL</label>
                 <input type="text" id="imgUrl" [(ngModel)]="imgUrl" placeholder="Enter the Image URL"
-                    class="py-1 px-1.5 border-orange-800 border rounded-lg" value="{{imu}}">
+                    class="py-1 px-1.5 border-orange-800 border rounded-lg">
             </div>
             <div class="mx-24 mb-3 flex flex-col">
                 <label for="price" class="py-1 px-1.5 text-base text-orange-800">Price</label>
                 <input type="number" id="price" [(ngModel)]="price" placeholder="Enter the Price"
-                    class="py-1 px-1.5 border-orange-800 border rounded-lg" value="{{pr}}">
+                    class="py-1 px-1.5 border-orange-800 border rounded-lg">
             </div>
             <div class="mx-24 flex flex-col">
                 <button (click)="updateDish()"
@@ -84,7 +83,7 @@
                     <div class="pl-7 text-slate-500">{{dish['description']}}</div>
                     <div class="italic mb-1 pl-7 text-base">{{dish['category']}}</div>
                     <div class="pl-7 mb-1.5">Rs. {{dish['price']}}</div>
-                    <div *ngIf="checkId(dish['id'])" class="mt-2 mb-3 pl-7 flex">
+                    <div *ngIf="checkId(dish['id']) === true" class="mt-2 mb-3 pl-7 flex">
                         <div class="rounded-lg border-2 border-orange-800 grid grid-cols-3 gap-3 px-3 py-2">
                             <button (click)="increment(dish['id'])">+</button>
                             <span>{{userData.cart[dish['id']]}}</span>
@@ -92,7 +91,7 @@
                         </div>
                         
                     </div>
-                    <div *ngIf="!checkId(dish['id'])" class="mt-2 mb-3 pl-7">
+                    <div *ngIf="checkId(dish['id']) === false" class="mt-2 mb-3 pl-7">
                         <button (click)="addToCart(dish['id'])" class="text-white bg-orange-800 px-3 pb-1.5 pt-1 rounded-lg text-xl">Add to cart</button>
                     </div>
                 </div>

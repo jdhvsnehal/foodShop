@@ -9,7 +9,8 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./dishes.component.css']
 })
 export class DishesComponent {
-  constructor(private router: Router, private dishService: DishService, private cartService: CartService) {}
+  constructor(private router: Router, private dishService: DishService, private cartService: CartService) {
+  }
   role: string = localStorage.getItem('userRole') || '';
   dishes: [];
   categ: string;
@@ -31,6 +32,11 @@ export class DishesComponent {
       this.userData = data;
     })
   }
+  ngOnChanges() {
+    this.cartService.getCart(this.userId).subscribe(data => {
+      this.userData = data;
+    })
+  }
   name: string;
   description: string;
   imgUrl: string;
@@ -47,13 +53,13 @@ export class DishesComponent {
   editDish(id: number) {
     this.identity = id;
     this.currDish = [this.dishes.find((d) => { return d['id'] === this.identity })];
-    this.nm = this.currDish[0]['name'];
-    this.desc = this.currDish[0]['description'];
-    this.cate = this.currDish[0]['category'];
-    this.imu = this.currDish[0]['imgUrl'];
-    this.pr = this.currDish[0]['price'];
+    this.name = this.currDish[0]['name'];
+    this.description = this.currDish[0]['description'];
+    this.categ = this.currDish[0]['category'];
+    this.imgUrl = this.currDish[0]['imgUrl'];
+    this.price = this.currDish[0]['price'];
     this.showUpdate = true;
-    console.log(this.nm, this.cate);
+    console.log(this.name);
   }
 
   updateDish() {
@@ -75,10 +81,9 @@ export class DishesComponent {
     });
   }
   userId: string = localStorage.getItem("userId") || "";
-  userData : any = {};
+  userData : any = { "cart" : {} };
   checkId(id: string) {
-    if(id in Object.keys(this.userData["cart"])) return true;
-    else false;
+    return Object.keys(this.userData["cart"]).find(element => element == id) ? true : false; 
   } 
   increment(id: string) {
     this.userData["cart"][id] += 1;
@@ -86,10 +91,10 @@ export class DishesComponent {
   }
   decrement(id: string) {
     this.userData["cart"][id] -= 1;
-    if(this.userData["cart"][id]===null || this.userData["cart"][id]<1){delete this.userData["cart"][id];}
+    if(this.userData["cart"][id]==null || this.userData["cart"][id]<1 || !this.userData["cart"][id]){delete this.userData["cart"][id];}
     this.cartService.addToCart(this.userId, this.userData).subscribe();
   }
-  addToCart(id: string) {
+  addToCart(id: string) { 
     this.userData["cart"][id] = 1;
     this.cartService.addToCart(this.userId, this.userData).subscribe();
   }

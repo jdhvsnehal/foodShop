@@ -1,134 +1,94 @@
 {
   "users": [
     {
+      "username": "admin",
+      "password": "admin",
+      "role": "admin",
+      "id": 1
+    },
+    {
       "username": "testclt",
       "password": "testclt",
       "role": "client",
       "cart": {
-        "2": 2,
-        "3": 2,
-        "5": 2
-      },
-      "id": 1
-    },
-    {
-      "username": "testclt2",
-      "password": "testclt2",
-      "role": "client",
-      "cart": {
-        "1": 2,
-        "3": 4,
-        "6": 7
+        "2": 1,
+        "3": 3
       },
       "id": 2
-    },
-    {
-      "username": "testadm",
-      "password": "testadm",
-      "role": "admin",
-      "id": 3
-    },
-    {
-      "username": "hlj",
-      "password": "hj@678",
-      "role": "admin",
-      "id": 4
-    },
-    {
-      "username": "tryclt",
-      "password": "tryclt",
-      "role": "client",
-      "cart": {
-        "1": 2,
-        "2": 4,
-        "3": 2,
-        "4": 6,
-        "5": 2
-      },
-      "id": 5
-    },
-    {
-      "username": "newclt",
-      "password": "newclt",
-      "role": "client",
-      "cart": {
-        "1": 1
-      },
-      "id": 6
     }
   ],
   "dishes": [
     {
-      "name": "Spring Rolls",
+      "name": "Margherita Pizza",
       "category": "Italian",
-      "description": "Fried rice rolls filled as per liking",
-      "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/blooming-quesadilla-ring-1674080631.jpeg",
-      "price": 150,
+      "description": "Classic pizza with tomato sauce, mozzarella, and basil",
+      "imgUrl": "https://simplyhomecooked.com/wp-content/uploads/2023/04/Margherita-Pizza-3.jpg",
+      "price": 199,
       "id": 1
     },
     {
-      "name": "dish2",
-      "category": "Continental",
-      "description": "dish2 description space",
-      "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/blooming-quesadilla-ring-1674080631.jpeg",
-      "price": 150,
+      "name": "Taco al Pastor",
+      "category": "Mexican",
+      "description": "Marinated tacos with pineapple and cilantro",
+      "imgUrl": "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FEdit%2F2022-08-Grilled-Chicken-Tacos%2FGrilled_Chicken_Tacos-3",
+      "price": 249,
       "id": 2
     },
     {
-      "name": "dish3",
+      "name": "Chicken Parmesan",
       "category": "Italian",
-      "description": "dish3 description space",
-      "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/blooming-quesadilla-ring-1674080631.jpeg",
-      "price": 150,
+      "description": "Breaded chicken topped with marinara sauce and melted cheese",
+      "imgUrl": "https://www.kitchensanctuary.com/wp-content/uploads/2020/01/Chicken-Parmesan-square-FS-38.jpg",
+      "price": 249,
       "id": 3
     },
     {
-      "name": "dish4",
+      "name": "Burrito Bowl",
       "category": "Mexican",
-      "description": "dish4 description space",
-      "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/blooming-quesadilla-ring-1674080631.jpeg",
-      "price": 150,
-      "id": 4
-    },
-    {
-      "name": "Spicy rolls",
-      "category": "Mexican",
-      "description": "dish5 description space",
-      "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/blooming-quesadilla-ring-1674080631.jpeg",
-      "price": 560,
+      "description": "A bowl of rice, black beans, grilled chicken, salsa, and guacamole",
+      "imgUrl": "https://www.killingthyme.net/wp-content/uploads/2022/10/burrito-bowl-recipe-4-500x500.jpg",
+      "price": 249,
       "id": 5
     },
     {
-      "name": "k3rjoiweur",
+      "name": "Large Burger",
       "category": "Continental",
-      "description": "dish6 description space",
-      "imgUrl": "https://hips.hearstapps.com/hmg-prod/images/blooming-quesadilla-ring-1674080631.jpeg",
-      "price": 300,
+      "description": "Juicy patty with lettuce, tomato, onion, and pickles",
+      "imgUrl": "https://images.unsplash.com/photo-1670237734838-821685a738b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80",
+      "price": 149,
       "id": 6
     },
     {
-      "name": "Pizza",
-      "category": "Italian",
-      "description": "Pizza with steaming cheese",
-      "imgUrl": "https://static.toiimg.com/thumb/56933159.cms?imgsize=686279&width=800&height=800",
-      "price": 502,
+      "name": "Hot and Sour Soup",
+      "category": "Chinese",
+      "description": "Spicy and tangy soup with mushrooms, tofu, and vegetables",
+      "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCDNKRjoqah2nOyvvwvj7qIyNBHrvhZwPTBA&usqp=CAU",
+      "price": 129,
       "id": 8
     },
     {
-      "name": "Paneer",
-      "category": "Indian",
-      "description": "Famous cottage cheese dish ",
-      "imgUrl": "https://static.toiimg.com/photo/53519548.cms",
-      "price": 350,
+      "name": "Chow Mein",
+      "category": "Chinese",
+      "description": "Stir-fried noodles with vegetables",
+      "imgUrl": "https://thebigmansworld.com/wp-content/uploads/2023/02/chicken-chow-mein-recipe-500x500.jpg",
+      "price": 179,
       "id": 9
     },
     {
-      "name": "Pasta",
-      "category": "Italian",
-      "description": "Pasta made with various items",
-      "imgUrl": "https://www.funfoodfrolic.com/wp-content/uploads/2020/09/Tomato-Pasta-Thumbnail.jpg",
-      "price": 450,
+      "name": "Chicken Tikka Masala",
+      "category": "Indian",
+      "description": "Grilled chicken in a spiced tomato and cream sauce",
+      "imgUrl": "https://www.licious.in/blog/wp-content/uploads/2020/12/Chicken-Tikka-Masala-min.jpg",
+      "price": 279,
       "id": 10
+    },
+    {
+      "name": "Dumplings",
+      "category": "Chinese",
+      "description": "Steamed or pan-fried dumplings filled with variety of fillings",
+      "imgUrl": "https://omnivorescookbook.com/wp-content/uploads/2023/05/230413_Chinese-Chicken-Dumplings_550.jpg",
+      "price": 199,
+      "id": 11
     }
   ]
 }
